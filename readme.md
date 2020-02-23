@@ -64,7 +64,7 @@ VS Code extensions:
 
 Here is a good blog post [Java development environments with containers](https://medium.com/@brunoborges/java-dev-environments-with-containers-66d6797b2753)
 
-Configurtion of the `.devcontainer/devcontainer.json` file.
+Configuration of the `.devcontainer/devcontainer.json` file.
 
 ```json
 {
@@ -87,7 +87,5 @@ Configurtion of the `.devcontainer/devcontainer.json` file.
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "java -version"
-
-    ...
 }
 ```

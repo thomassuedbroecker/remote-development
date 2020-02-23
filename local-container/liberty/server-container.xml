@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="OpenLiberty Server">
+	
+    <featureManager>
+        <feature>microProfile-3.2</feature>
+    </featureManager>
+     
+    <httpEndpoint id="defaultHttpEndpoint" host="localhost" httpPort="3000" httpsPort="9443"/>
+
+    <webApplication location="authors-container.war" contextRoot="api"/>
+</server>

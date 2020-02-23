@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ibm.cloud</groupId>
+	<artifactId>authors-container</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	
+    <properties>
+        <!-- Compiler -->
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+   
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.microprofile</groupId>
+			<artifactId>microprofile</artifactId>
+			<version>3.2</version>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>authors-container</finalName>
+        <!--Plugins -->
+        <plugins>  
+            <!-- Enable liberty-maven plugin -->
+            <!-- tag::libertyMavenPlugin[] -->
+            <plugin>
+                <groupId>io.openliberty.tools</groupId>
+                <artifactId>liberty-maven-plugin</artifactId>
+				<version>3.1</version>
+				<!-- tag::libertyMavenConfiguration[] -->
+				<configuration>
+                	<serverName>authorsDevServerOnContainer</serverName>
+					<configFile>liberty/server-container.xml</configFile>
+            	</configuration>
+				<!-- end::libertyMavenConfiguration[] -->
+            </plugin>
+            <!-- end::libertyMavenPlugin[] -->
+            <!-- Enable liberty-maven-plugin -->
+        </plugins>
+	</build>
+</project>
